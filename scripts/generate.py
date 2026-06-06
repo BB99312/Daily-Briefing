@@ -39,11 +39,14 @@ SECTIONS = {
         "title": "The Middle East",
         "subtitle": "Regional politics, conflict, diplomacy &amp; economics",
         "feeds": [
-            "https://www.aljazeera.com/xml/rss/all.xml",
-            "http://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
+            "https://rss.jpost.com/rss/rssfeedsfrontpage.aspx",
             "https://www.timesofisrael.com/feed/",
+            "http://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
             "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
-            "https://feeds.reuters.com/Reuters/worldNews",
+            "https://www.haaretz.com/srv/haaretz-latest-articles.xml",
+            "https://www.arabnews.com/rss.xml",
+            "https://www.middleeasteye.net/rss",
+            "https://gulfnews.com/rss",
         ],
         "keywords": [
             "israel", "palestine", "iran", "iraq", "syria", "lebanon",
@@ -51,6 +54,8 @@ SECTIONS = {
             "hezbollah", "gaza", "west bank", "persian gulf", "arab",
             "netanyahu", "tel aviv", "tehran", "beirut", "cairo", "riyadh",
             "dubai", "qatar", "kuwait", "bahrain", "oman", "turkey",
+            "knesset", "idf", "mossad", "erdogan", "ankara", "abu dhabi",
+            "muscat", "amman", "baghdad", "damascus", "rouhani", "khamenei",
         ],
     },
     "defense_security": {
