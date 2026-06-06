@@ -43,9 +43,7 @@ SECTIONS = {
             "https://www.timesofisrael.com/feed/",
             "http://feeds.bbci.co.uk/news/world/middle_east/rss.xml",
             "https://rss.nytimes.com/services/xml/rss/nyt/MiddleEast.xml",
-            "https://www.haaretz.com/srv/haaretz-latest-articles.xml",
             "https://www.arabnews.com/rss.xml",
-            "https://www.middleeasteye.net/rss",
             "https://gulfnews.com/rss",
         ],
         "keywords": [
