@@ -15,6 +15,26 @@ from pathlib import Path
 # ── Section definitions ───────────────────────────────────────────────────────
 
 SECTIONS = {
+    "world_news": {
+        "title": "World News",
+        "subtitle": "Europe, Asia, Africa &amp; Latin America",
+        "feeds": [
+            "http://feeds.bbci.co.uk/news/world/rss.xml",
+            "https://feeds.reuters.com/Reuters/worldNews",
+            "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+            "https://www.theguardian.com/world/rss",
+            "https://feeds.npr.org/1004/rss.xml",
+        ],
+        "keywords": [
+            "europe", "european", "eu ", "nato", "russia", "ukraine", "china",
+            "beijing", "moscow", "india", "japan", "korea", "asia", "africa",
+            "latin america", "brazil", "mexico", "uk", "britain", "france",
+            "germany", "italy", "spain", "poland", "putin", "xi jinping",
+            "modi", "macron", "g7", "g20", "un ", "united nations", "global",
+            "international", "pacific", "atlantic", "arctic", "sanctions",
+            "treaty", "summit", "diplomacy", "foreign", "trade war",
+        ],
+    },
     "middle_east": {
         "title": "The Middle East",
         "subtitle": "Regional politics, conflict, diplomacy &amp; economics",
@@ -31,6 +51,26 @@ SECTIONS = {
             "hezbollah", "gaza", "west bank", "persian gulf", "arab",
             "netanyahu", "tel aviv", "tehran", "beirut", "cairo", "riyadh",
             "dubai", "qatar", "kuwait", "bahrain", "oman", "turkey",
+        ],
+    },
+    "defense_security": {
+        "title": "Defense &amp; National Security",
+        "subtitle": "Military, intelligence &amp; security policy",
+        "feeds": [
+            "https://www.defenseone.com/rss/all/",
+            "https://breakingdefense.com/feed/",
+            "https://warontherocks.com/feed/",
+            "https://www.politico.com/rss/nationalsecurity.xml",
+            "https://feeds.reuters.com/Reuters/worldNews",
+        ],
+        "keywords": [
+            "military", "pentagon", "defense", "defence", "nato", "troops",
+            "weapon", "missile", "nuclear", "intelligence", "cia", "nsa",
+            "fbi", "homeland security", "cyber", "warfare", "combat",
+            "air force", "navy", "army", "marines", "special forces",
+            "drone", "fighter jet", "submarine", "carrier", "national security",
+            "classified", "espionage", "spy", "surveillance", "threat",
+            "adversary", "deterrence", "strategic", "geopolitical",
         ],
     },
     "law_courts": {
@@ -276,12 +316,11 @@ def render_full_page(edition_date, sections_html, css_path="style.css"):
       <div class="masthead-rule-bottom"></div>
     </div>
     <nav class="section-nav">
+      <a href="#world_news">World News</a>
       <a href="#middle_east">The Middle East</a>
-      <span class="nav-sep">&bull;</span>
+      <a href="#defense_security">Defense &amp; Security</a>
       <a href="#law_courts">Law &amp; Courts</a>
-      <span class="nav-sep">&bull;</span>
       <a href="#aviation">Aviation</a>
-      <span class="nav-sep">&bull;</span>
       <a href="#us_politics">U.S. Politics</a>
     </nav>
   </header>
