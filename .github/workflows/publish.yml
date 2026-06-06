@@ -1,0 +1,49 @@
+name: Publish Daily Briefing
+
+on:
+  schedule:
+    # Runs at 11:00 UTC every day = 7:00 AM Eastern (6:00 AM CDT in summer)
+    # To change the time, edit the line below. Format: minute hour * * *
+    # Use https://crontab.guru to experiment with times.
+    - cron: '0 11 * * *'
+
+  # Adds a "Run workflow" button in the GitHub Actions tab for manual runs
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+
+      - name: Generate today's edition
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/generate.py
+
+      - name: Commit and push new edition
+        run: |
+          git config user.name  "Daily Briefing Bot"
+          git config user.email "bot@daily-briefing"
+          git add docs/
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Edition: $(date -u +'%Y-%m-%d')"
+            git push
+          fi
